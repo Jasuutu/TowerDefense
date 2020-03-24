@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -19,6 +20,10 @@ public class PlayerBase : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (healthText == null)
+        {
+            throw new ArgumentNullException(nameof(healthText));
+        }
         UpdateHealthText();
     }
 
@@ -36,6 +41,6 @@ public class PlayerBase : MonoBehaviour
 
     public void UpdateHealthText()
     {
-        healthText.text = $"{maxHealth} / {health}";
+        healthText.text = $"{health} / {maxHealth}";
     }
 }
