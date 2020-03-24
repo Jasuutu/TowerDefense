@@ -27,10 +27,17 @@ jobs:
 
       # Test
       - name: Run tests
+        id: testRunner
         uses: webbertakken/unity-test-runner@v1.3
         with:
+          projectPath: TowerDefenseGame
           unityVersion: 2019.3.6f1
 
+      - uses: actions/upload-artifact@v1
+        with:
+          name: Test results (all modes)
+          path: ${{ steps.testRunner.outputs.artifactsPath }}
+          
       # Build
       #- name: Build project
       #  uses: webbertakken/unity-builder@v0.10
