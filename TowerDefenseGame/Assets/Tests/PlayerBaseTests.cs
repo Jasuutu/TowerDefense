@@ -46,6 +46,17 @@ namespace Tests
             yield return new WaitForSeconds(.01f);
         }
 
+        [UnityTest]
+        public IEnumerator PlayerBaseDefenseReducesDamage()
+        {
+            playerBase.Defense = 10;
+            playerBase.TakeDamage(20);
+
+            Assert.AreEqual(playerBase.Health, 90);
+            
+            yield return null;
+        }
+
         [TearDown]
         public void Teardown()
         {
