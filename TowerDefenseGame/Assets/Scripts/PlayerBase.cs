@@ -6,7 +6,7 @@ public class PlayerBase : MonoBehaviour
 {
     [SerializeField] protected int maxHealth = 100;
     [SerializeField] protected int health = 100;
-    [SerializeField] protected Text healthText;
+    [SerializeField] protected GameObject healthText;
 
     public int Health => health;
     public int Defense = 0;
@@ -18,6 +18,9 @@ public class PlayerBase : MonoBehaviour
         {
             throw new ArgumentNullException(nameof(healthText));
         }
+        var meshRenderererererer = healthText.GetComponent<MeshRenderer>();
+        meshRenderererererer.sortingOrder = 100;
+
         UpdateHealthText();
     }
 
@@ -35,6 +38,7 @@ public class PlayerBase : MonoBehaviour
 
     public void UpdateHealthText()
     {
-        healthText.text = $"{health} / {maxHealth}";
+        var textMesh = healthText.GetComponent<TextMesh>();
+        textMesh.text = $"{health} / {maxHealth}";
     }
 }
