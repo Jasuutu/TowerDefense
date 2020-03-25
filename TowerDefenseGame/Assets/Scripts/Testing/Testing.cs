@@ -9,7 +9,7 @@ public class Testing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pathFinding = new PathFinding(11, 12);
+        pathFinding = new PathFinding(11, 12, transform.position);
     }
 
     // Update is called once per frame
@@ -24,7 +24,8 @@ public class Testing : MonoBehaviour
             if(path != null)
             {
                 for(int i = 0; i < path.Count - 1; i++)
-                    Debug.DrawLine(new Vector3(path[i].x, path[i].y) * 1f + Vector3.one * .5f, new Vector3(path[i+1].x, path[i+1].y) * 1f + Vector3.one * .5f, Color.green, 5);
+                    Debug.DrawLine(new Vector3(path[i].x + transform.position.x - pathFinding.GetGrid().GetWidth()/2, path[i].y + transform.position.y - pathFinding.GetGrid().GetHeight()/2) * 1f + Vector3.one * .5f, 
+                                    new Vector3(path[i+1].x + transform.position.x - pathFinding.GetGrid().GetWidth()/2, path[i+1].y + transform.position.y - pathFinding.GetGrid().GetHeight()/2) * 1f + Vector3.one * .5f, Color.green, 5);
             }
         }
 

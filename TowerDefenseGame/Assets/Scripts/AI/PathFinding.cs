@@ -12,9 +12,11 @@ public class PathFinding
     private List<PathNode> openList;
     private List<PathNode> closedList;
 
-    public PathFinding(int width, int height)
+    public PathFinding(int width, int height, Vector3 position)
     {
-        grid = new CustomGrid<PathNode>(width, height, 1f, new Vector3(0,0), (CustomGrid<PathNode> g,int x,int y) => new PathNode(g, x, y));
+        var offsetPosition = new Vector3(position.x + width / 2, position.y + height / 2);
+        var newPosition = position - offsetPosition;
+        grid = new CustomGrid<PathNode>(width, height, 1f, newPosition, (CustomGrid<PathNode> g,int x,int y) => new PathNode(g, x, y));
     }
 
     public List<PathNode> FindPath(int startX, int startY, int endX, int endY)
