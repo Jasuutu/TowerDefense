@@ -1,17 +1,15 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.TestTools;
-using UnityEngine.UI;
 
 namespace Tests
 {
     public class PlayerBaseTests
     {
         private PlayerBase playerBase;
-        private Text healthText;
+        private TextMesh healthText;
 
         [SetUp]
         public void Setup()
@@ -19,7 +17,7 @@ namespace Tests
             var prefab = AssetDatabase.LoadAssetAtPath("Assets/Prefabs/PlayerBase.prefab", typeof(PlayerBase));
             var playerBaseGameObject = MonoBehaviour.Instantiate(prefab) as PlayerBase;
             playerBase = playerBaseGameObject.GetComponent<PlayerBase>();
-            healthText = playerBase.GetComponentInChildren<Text>();
+            healthText = playerBase.GetComponentInChildren<TextMesh>();
         }
 
         [UnityTest]
