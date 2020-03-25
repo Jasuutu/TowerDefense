@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerBase : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class PlayerBase : MonoBehaviour
         }
         var meshRenderererererer = healthText.GetComponent<MeshRenderer>();
         meshRenderererererer.sortingOrder = 100;
+
         UpdateHealthText();
     }
 
