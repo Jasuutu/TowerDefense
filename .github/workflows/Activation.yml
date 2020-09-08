@@ -1,9 +1,8 @@
 name: Acquire activation file
 on: 
   push:
-    { branches: [BetaTest] }
-    #branches-ignore: 
-    #  - '**'
+    branches-ignore: 
+      - '**'
 jobs:
   activation:
     name: Request manual activation file 🔑
