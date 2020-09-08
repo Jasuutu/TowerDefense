@@ -31,7 +31,7 @@ jobs:
         uses: webbertakken/unity-test-runner@v1.6
         with:
           projectPath: TowerDefenseGame
-          unityVersion: 2020.1.4f1
+          unityVersion: 2020.1.4f1-windows
 
       - uses: actions/upload-artifact@v1
         with:
