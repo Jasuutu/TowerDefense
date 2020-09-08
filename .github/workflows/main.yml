@@ -28,7 +28,7 @@ jobs:
       # Test
       - name: Run tests
         id: testRunner
-        uses: Alriightyman/unity-test-runner@master
+        uses: webbertakken/unity-test-runner@v1.6
         with:
           projectPath: TowerDefenseGame
           unityVersion: 2020.1.4f1
