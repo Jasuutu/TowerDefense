@@ -5,7 +5,7 @@ on:
   push: { branches: [master, BetaTest] }
 
 env:
-  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE_2020 }}
 
 jobs:
   build:
