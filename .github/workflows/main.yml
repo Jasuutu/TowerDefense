@@ -28,10 +28,10 @@ jobs:
       # Test
       - name: Run tests
         id: testRunner
-        uses: webbertakken/unity-test-runner@v1.3
+        uses: Alriightyman/unity-test-runner@master
         with:
           projectPath: TowerDefenseGame
-          unityVersion: 2019.3.6f1
+          unityVersion: 2020.2.0b1
 
       - uses: actions/upload-artifact@v1
         with:
