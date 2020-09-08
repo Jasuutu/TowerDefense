@@ -31,7 +31,7 @@ jobs:
         uses: Alriightyman/unity-test-runner@master
         with:
           projectPath: TowerDefenseGame
-          unityVersion: 2020.2.0b1
+          unityVersion: 2020.1.4f1
 
       - uses: actions/upload-artifact@v1
         with:
